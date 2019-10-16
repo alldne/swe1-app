@@ -4,8 +4,8 @@ python:
 before_scritp:
   - python manage.py migrate
 script:
-  - black
-  - flake8
+  - black --check .
+  - flake8 .
   - coverage run manage.py test
 after_success:
   - coveralls
